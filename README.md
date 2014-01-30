@@ -42,35 +42,7 @@ or feel free copying (and modifying) the declarations from this script to your "
 
 Rooty assumes the following multi-project structure (all parts are optional):
 
-```
-rootProject
-|
-+-- apps
-|   |
-|   +-- app1
-|   |
-|   +-- app2
-|   |
-|   +-- settings.gradle
-|
-+-- buildSrc
-|
-+-- examples
-|   |
-|   +-- example1
-|   |
-|   +-- example2
-|   |
-|   +-- settings.gradle
-|
-+-- libs  
-|   |
-|   +-- libraryA
-|   |
-|   +-- libraryB
-|
-+-- settings.gradle
-```
+![multi-project structure diagram](https://raw.github.com/akhikhl/rooty/master/doc/multi_project_structure.png "Multi-project structure")
 
 "buildSrc" is a standard build script folder, described in 
 [official gradle documentation](http://www.gradle.org/docs/current/userguide/organizing_build_logic.html#sec:build_sources).
