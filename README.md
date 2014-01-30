@@ -9,7 +9,9 @@ All versions of Rooty are available in maven central under the group 'org.akhikh
 1. [Why rooty?](#why-rooty)
 2. [Gradle plugin](#gradle-plugin)
 3. [Multi-project structure](#multi-project-structure)
-4. [Gradle configuration](#gradle-configuration)
+4. [Root project tasks](#root-project-tasks)
+5. [Library project tasks](#library-project-tasks)
+6. [Gradle configuration](#gradle-configuration)
 
 ## Why rooty?
 
@@ -83,7 +85,60 @@ Rooty ensures that examples are compiled only after successful compilation and i
 "apps" contains java/groovy/scala applications listed in "apps/settings.gradle".
 Rooty ensures that apps are compiled only after successful compilation and installation of "libs".
 
-## Gradle tasks
+## Root project tasks
+
+Rooty adds the following tasks to the root project:
+
+### build
+
+Does nothing by default. Finalized by buildApps and buildExamples tasks.
+
+### buildApps
+
+Runs "build" task against "apps" folder (if such folder exists).
+
+### buildExamples
+
+Runs "build" task against "examples" folder (if such folder exists).
+
+### clean
+
+Deletes "build" folder of the root project (if such folder exists). 
+Depends on "cleanApps", "cleanExamples" and "buildSrc_clean" tasks.
+
+### cleanApps
+
+Runs "clean" task against "apps" folder (if such folder exists).
+"clean" task of the root project depends on "cleanApps".
+
+### cleanExamples
+
+Runs "clean" task against "examples" folder (if such folder exists).
+"clean" task of the root project depends on "cleanExamples".
+
+### buildSrc_clean
+
+Runs "clean" task against "buildSrc" folder (if such folder exists).
+"clean" task of the root project depends on "buildSrc_clean".
+
+### buildSrc_uploadArchives
+
+Runs "uploadArchives" task against "buildSrc" folder (if such folder exists).
+"uploadArchives" task of the root project depends on "buildSrc_uploadArchives".
+
+## Library project tasks
+
+Rooty adds the following tasks to every project within "libs":
+
+### sourcesJar
+
+Creates sources jar from the source code of the given library.
+Automatically invoked by "assemble" task.
+
+### javadocJar
+
+Creates javadoc jar from the source code of the given library.
+Automatically invoked by "assemble" task.
 
 ## Gradle configuration
 
