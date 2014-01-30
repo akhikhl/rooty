@@ -89,7 +89,7 @@ Rooty ensures that apps are compiled only after successful compilation and insta
 
 Rooty adds the following tasks to the root project:
 
-![task diagram](https://raw.github.com/akhikhl/gradle-onejar/master/doc/rootproject_tasks_diagram.png "Root project tasks")
+![task diagram](https://raw.github.com/akhikhl/rooty/master/doc/rootproject_tasks_diagram.png "Root project tasks")
 
 ### build
 
@@ -132,17 +132,17 @@ Runs "uploadArchives" task against "buildSrc" folder (if such folder exists).
 
 Rooty adds the following tasks to every project within "libs":
 
-![task diagram](https://raw.github.com/akhikhl/gradle-onejar/master/doc/libproject_tasks_diagram.png "Library project tasks")
+![task diagram](https://raw.github.com/akhikhl/rooty/master/doc/libproject_tasks_diagram.png "Library project tasks")
 
 ### sourcesJar
 
 Creates sources jar from the source code of the given library.
-Automatically invoked by "assemble" task.
+"assemble" task of library project depends on "sourcesJar".
 
 ### javadocJar
 
 Creates javadoc jar from the source code of the given library.
-Automatically invoked by "assemble" task.
+"assemble" task of library project depends on "javadocJar".
 
 ## Gradle configuration
 
