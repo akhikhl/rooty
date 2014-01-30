@@ -73,14 +73,14 @@ rootProject
 "buildSrc" is a standard build script folder, described in 
 [official gradle documentation](http://www.gradle.org/docs/current/userguide/organizing_build_logic.html#sec:build_sources).
 
-"libs" contains java/groovy/etc libraries listed in "settings.gradle" of the root project.
+"libs" contains java/groovy/scala libraries listed in "settings.gradle" of the root project.
 Rooty ensures that these libraries are installed into local maven repository ($HOME/.m2/repository)
-on each build.
+upon successful compilation.
 
-"examples" contains example java/groovy/etc programs listed "examples/settings.gradle".
+"examples" contains example java/groovy/scala programs listed in "examples/settings.gradle".
 Rooty ensures that examples are compiled only after successful compilation and installation of "libs".
 
-"apps" contains java/groovy/etc applications listed "apps/settings.gradle".
+"apps" contains java/groovy/scala applications listed in "apps/settings.gradle".
 Rooty ensures that apps are compiled only after successful compilation and installation of "libs".
 
 ## Gradle tasks
