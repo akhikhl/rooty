@@ -1,0 +1,10 @@
+ext {
+  group = 'org.akhikhl.rooty'
+  version = '0.0.1'
+  groovy_version = '2.2.1'
+  generateSources = true
+  generateJavadoc = true
+}
+
+apply from: 'root.gradle'
+
