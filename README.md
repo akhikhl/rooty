@@ -89,6 +89,8 @@ Rooty ensures that apps are compiled only after successful compilation and insta
 
 Rooty adds the following tasks to the root project:
 
+![task diagram](https://raw.github.com/akhikhl/gradle-onejar/master/doc/rootproject_tasks_diagram.png "Root project tasks")
+
 ### build
 
 Does nothing by default. Finalized by buildApps and buildExamples tasks.
@@ -129,6 +131,8 @@ Runs "uploadArchives" task against "buildSrc" folder (if such folder exists).
 ## Library project tasks
 
 Rooty adds the following tasks to every project within "libs":
+
+![task diagram](https://raw.github.com/akhikhl/gradle-onejar/master/doc/libproject_tasks_diagram.png "Library project tasks")
 
 ### sourcesJar
 
