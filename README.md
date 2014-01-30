@@ -11,7 +11,9 @@ All versions of Rooty are available in maven central under the group 'org.akhikh
 3. [Multi-project structure](#multi-project-structure)
 4. [Root project tasks](#root-project-tasks)
 5. [Library project tasks](#library-project-tasks)
-6. [Gradle configuration](#gradle-configuration)
+6. [Injected properties](#injected-properties)
+7. [Injected dependencies](#injected-dependencies)
+8. [Copyright and License](#copyright-and-license)
 
 ## Why rooty?
 
@@ -116,5 +118,60 @@ Creates sources jar from the source code of the given library.
 Creates javadoc jar from the source code of the given library.
 "assemble" task of library project depends on "javadocJar".
 
-## Gradle configuration
+## Injected properties
 
+Rooty injects the following properties into root project:
+
+```groovy
+ext {
+  generateSources = true
+  generateJavadoc = true
+  groovy_version = '2.2.1'
+  junit_version = '4.11'
+  spock_version = '0.7-groovy-2.0'
+  logback_version = '1.0.13'
+  slf4j_version = '1.7.5'
+  logback = "ch.qos.logback:logback-classic:$logback_version"
+  slg4j_api = "org.slf4j:slf4j-api:$slf4j_version"
+}
+```
+
+By default all library projects inherit these properties.
+
+You can override any of these properties either by redefining them in the root project
+or in any (or every) library project, for example, like this:
+
+```groovy
+ext {
+  generateSources = false
+}
+```
+
+## Injected dependencies
+
+Rooty injects the following dependencies into library projects:
+
+- compile "org.codehaus.groovy:groovy-all:${project.groovy_version}"
+  - injected if project has groovy nature
+  
+- testCompile "junit:junit:${project.junit_version}"
+
+- testCompile "org.codehaus.groovy:groovy-all:${project.groovy_version}"  
+
+- testCompile "org.spockframework:spock-core:${project.spock_version}"
+
+Please note that neither logback nor slf4j-api are injected. However, the relevant
+injected properties somewhat simplify corresponding declarations:
+
+```groovy
+dependencies {
+  compile logback
+  compile slg4j_api
+}
+```
+
+## Copyright and licence
+
+Copyright 2014 (c) Andrey Hihlovskiy
+
+All versions, present and past, of rooty are licensed under [MIT license](license.txt).
