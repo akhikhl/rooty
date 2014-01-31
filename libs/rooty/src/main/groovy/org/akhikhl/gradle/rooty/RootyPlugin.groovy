@@ -18,6 +18,16 @@ import org.gradle.api.tasks.bundling.*
  */
 class RootyPlugin implements Plugin<Project> {
 
+  private static findPropertyOfSelfOrAncestor(Project project, String propName) {
+    def p = project
+    def result
+    while(p != null) {
+      if(p.ext.has(propName))
+        return p.ext[propName]
+      p = p.parent
+    }
+  }
+
   void apply(Project project) {
 
     project.apply plugin: 'base' // add "clean" task to the root project.
@@ -132,7 +142,16 @@ class RootyPlugin implements Plugin<Project> {
   } // rootProjectAfterEvaluate
 
   private void subprojectAfterEvaluate(Project project) {
-    project.version = (project.version == 'unspecified' ? (project.rootProject.version == 'unspecified' ? '0.0.1' : project.rootProject.version) : project.version)
+
+    def defaultGroup = project.projectDir.parentFile.absolutePath.substring(project.rootProject.projectDir.parentFile.absolutePath.length())
+    defaultGroup = defaultGroup.replace(File.separator, '.')
+    if(defaultGroup.startsWith('.'))
+      defaultGroup = defaultGroup.substring(1)
+    if(project.group == defaultGroup)
+      project.group = findPropertyOfSelfOrAncestor(project, 'group') ?: project.group
+
+    if(project.version == 'unspecified')
+      project.version = findPropertyOfSelfOrAncestor(project, 'version') ?: '0.0.1'
 
     if(project.plugins.findPlugin('java')) {
       project.sourceCompatibility = '1.7'
