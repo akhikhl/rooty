@@ -1,4 +1,4 @@
-# Rooty [![Maintainer Status](http://stillmaintained.com/akhikhl/rooty.png)](http://stillmaintained.com/akhikhl/rooty) 
+# Rooty [![Maintainer Status](http://stillmaintained.com/akhikhl/rooty.png)](http://stillmaintained.com/akhikhl/rooty) [![Build Status](https://travis-ci.org/akhikhl/rooty.png?branch=master)](https://travis-ci.org/akhikhl/rooty)
 
 This is gradle plugin for automating idiomatic part of multi-project gradle builds.
 
