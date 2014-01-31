@@ -35,7 +35,7 @@ class RootyPlugin implements Plugin<Project> {
       logback_version = project.hasProperty('logback_version') ? project.logback_version : '1.0.13'
       slf4j_version = project.hasProperty('slf4j_version') ? project.slf4j_version : '1.7.5'
       logback = "ch.qos.logback:logback-classic:$logback_version"
-      slg4j_api = "org.slf4j:slf4j-api:$slf4j_version"
+      slf4j_api = "org.slf4j:slf4j-api:$slf4j_version"
     }
 
     project.afterEvaluate {
