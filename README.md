@@ -176,3 +176,7 @@ dependencies {
 Copyright 2014 (c) Andrey Hihlovskiy
 
 All versions, present and past, of rooty are licensed under [MIT license](license.txt).
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/akhikhl/rooty/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
