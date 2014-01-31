@@ -1,4 +1,4 @@
-# Rooty [![Maintainer Status](http://stillmaintained.com/akhikhl/rooty.png)](http://stillmaintained.com/akhikhl/rooty) [![Build Status](https://travis-ci.org/akhikhl/rooty.png?branch=master)](https://travis-ci.org/akhikhl/rooty)
+# Rooty [![Maintainer Status](http://stillmaintained.com/akhikhl/rooty.png)](http://stillmaintained.com/akhikhl/rooty) [![Build Status](https://travis-ci.org/akhikhl/rooty.png?branch=master)](https://travis-ci.org/akhikhl/rooty) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/akhikhl/rooty/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 This is gradle plugin for automating idiomatic part of multi-project gradle builds.
 
@@ -177,6 +177,4 @@ Copyright 2014 (c) Andrey Hihlovskiy
 
 All versions, present and past, of rooty are licensed under [MIT license](license.txt).
 
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/akhikhl/rooty/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
