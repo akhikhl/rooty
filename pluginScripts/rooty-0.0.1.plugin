@@ -1,0 +1,23 @@
+buildscript {
+
+  repositories {
+    mavenLocal()
+    mavenCentral()
+  }
+
+  apply plugin: 'maven'
+  
+  dependencies {
+    classpath 'org.akhikhl.rooty:rooty:0.0.1'
+  }
+}
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+}
+
+if (!project.plugins.findPlugin(org.akhikhl.gradle.rooty.RootyPlugin))
+  project.apply(plugin: org.akhikhl.gradle.rooty.RootyPlugin)
+
+
