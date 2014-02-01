@@ -1,6 +1,6 @@
 ext {
   group = 'org.akhikhl.rooty'
-  version = '0.0.1'
+  version = '0.0.2'
   groovy_version = '2.2.1'
   generateSources = true
   generateJavadoc = true
