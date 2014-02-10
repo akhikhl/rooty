@@ -42,10 +42,12 @@ class RootyPlugin implements Plugin<Project> {
       groovy_version = project.hasProperty('groovy_version') ? project.groovy_version : '2.2.1'
       junit_version = project.hasProperty('junit_version') ? project.junit_version : '4.11'
       spock_version = project.hasProperty('spock_version') ? project.spock_version : '0.7-groovy-2.0'
-      logback_version = project.hasProperty('logback_version') ? project.logback_version : '1.1.0'
-      slf4j_version = project.hasProperty('slf4j_version') ? project.slf4j_version : '1.7.5'
+      logback_version = project.hasProperty('logback_version') ? project.logback_version : '1.1.1'
+      slf4j_version = project.hasProperty('slf4j_version') ? project.slf4j_version : '1.7.6'
       logback = "ch.qos.logback:logback-classic:$logback_version"
       slf4j_api = "org.slf4j:slf4j-api:$slf4j_version"
+      sourceCompatibility = '1.7'
+      targetCompatibility = '1.7'
     }
 
     project.afterEvaluate {
@@ -154,8 +156,8 @@ class RootyPlugin implements Plugin<Project> {
       project.version = findPropertyOfSelfOrAncestor(project, 'version') ?: '0.0.1'
 
     if(project.plugins.findPlugin('java')) {
-      project.sourceCompatibility = '1.7'
-      project.targetCompatibility = '1.7'
+      project.sourceCompatibility = findPropertyOfSelfOrAncestor(project, 'sourceCompatibility')
+      project.targetCompatibility = findPropertyOfSelfOrAncestor(project, 'targetCompatibility')
       [project.compileJava, project.compileTestJava]*.options*.encoding = 'UTF-8'
     }
 
