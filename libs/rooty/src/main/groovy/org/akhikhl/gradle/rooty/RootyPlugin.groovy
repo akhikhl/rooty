@@ -39,7 +39,7 @@ class RootyPlugin implements Plugin<Project> {
     project.ext {
       generateSources = project.hasProperty('generateSources') ? project.generateSources : true
       generateJavadoc = project.hasProperty('generateJavadoc') ? project.generateJavadoc : true
-      groovy_version = project.hasProperty('groovy_version') ? project.groovy_version : '2.2.1'
+      groovy_version = project.hasProperty('groovy_version') ? project.groovy_version : '2.2.2'
       junit_version = project.hasProperty('junit_version') ? project.junit_version : '4.11'
       spock_version = project.hasProperty('spock_version') ? project.spock_version : '0.7-groovy-2.0'
       logback_version = project.hasProperty('logback_version') ? project.logback_version : '1.1.1'
