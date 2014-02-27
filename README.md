@@ -126,11 +126,11 @@ Rooty injects the following properties into root project:
 ext {
   generateSources = true
   generateJavadoc = true
-  groovy_version = '2.2.1'
+  groovy_version = '2.2.2'
   junit_version = '4.11'
   spock_version = '0.7-groovy-2.0'
-  logback_version = '1.0.13'
-  slf4j_version = '1.7.5'
+  logback_version = '1.1.1'
+  slf4j_version = '1.7.6'
   logback = "ch.qos.logback:logback-classic:$logback_version"
   slf4j_api = "org.slf4j:slf4j-api:$slf4j_version"
 }
@@ -157,7 +157,7 @@ dependencies {
   compile "org.codehaus.groovy:groovy-all:${project.groovy_version}"
   // the following 3 dependencies are injected if project has "test" task
   testCompile "junit:junit:${project.junit_version}"
-  testCompile "org.codehaus.groovy:groovy-all:${project.groovy_version}"  
+  testCompile "org.codehaus.groovy:groovy-all:${project.groovy_version}"
   testCompile "org.spockframework:spock-core:${project.spock_version}"
 }
 ```
